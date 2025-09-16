@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.db import models
 from django.contrib import admin
 from django.core.mail import send_mail
-from django.contrib import messages 
+from django.contrib import messages
+from django.conf import settings
 
 from .models import Profile, Resume, Portfolio, Summary, Education, Contact
 
@@ -25,34 +26,56 @@ def contact(request):
         phone = request.POST.get('phone')  
         message = request.POST.get('message')
 
-        # Save to database
-        contact = Contact.objects.create(
-            name=name,
-            email=email,
-            phone=phone,
-            message=message,  # or use 'message=' if your model has 'message' field
-        )
+        try:
+            # Save to database
+            contact = Contact.objects.create(
+                name=name,
+                email=email,
+                phone=phone,
+                message=message,
+            )
 
-        # Send email (This must be BEFORE return)
-        send_mail(
-            subject=f"New Contact from {name}",
-            message=f"Name: {name}\nEmail: {email}\nPhone: {phone}\n\nMessage:\n{message}",
-            from_email="saniyadav7755@gmail.com",
-            recipient_list=["sani228142@gmail.com"],
-            fail_silently=False,
-        )
+            try:
+                # Send email to admin
+                admin_email_sent = send_mail(
+                    subject=f"New Contact Form Submission - {name}",
+                    message=f"Name: {name}\nEmail: {email}\nPhone: {phone}\n\nMessage:\n{message}",
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[settings.EMAIL_HOST_USER],
+                    fail_silently=False,
+                )
+                print(f"Admin email sent: {admin_email_sent}")
+                
+                # Send confirmation to user
+                user_email_sent = send_mail(
+                    subject=f"Thank you for contacting us, {name}!",
+                    message=f"Hello {name},\n\nThank you for your message. We have received it successfully.\n\nWe will get back to you soon.\n\nBest regards,\nSani Yadav",
+                    from_email=settings.EMAIL_HOST_USER,
+                    recipient_list=[email],
+                    fail_silently=False,
+                )
+                print(f"User email sent: {user_email_sent}")
+                
+                messages.success(request, 'Thank you for contacting us! We will get back to you soon.')
+                return redirect('index_html')
 
-        messages.success(request, "Your message has been sent successfully!")
+            except Exception as e:
+                print(f"Error sending email: {e}")
+                messages.success(request, 'Thank you for contacting us! We will get back to you soon.')
+                return redirect('index_html')
 
-        return redirect('/') 
-    else:
-        return render(request, 'contact.html')
+        except Exception as e:
+            print(f"Error saving contact: {e}")
+            messages.error(request, 'There was an error submitting the form. Please try again.')
+            return redirect('index_html')
+
+    return redirect('index_html' + '#contact')
 
 
 # ABOUT US
 def about_us(request):
-    about_us = about_us.objects.values()
-    return render(request, 'about_us.html', {'about': about_us})
+    about_data = Profile.objects.all()  # Using Profile model instead of AboutUs
+    return render(request, 'about_us.html', {'about': about_data})
 
 # RESUME 
 def resume(request):
@@ -63,9 +86,12 @@ def resume(request):
 
 # SERVICES 
 def services(request):
-    services = services.objects.values()
-    print(services)
-    return render(request, 'home.html')
+    services_list = [
+        {"title": "Web Development", "description": "Custom website development using modern technologies."},
+        {"title": "Python/Django", "description": "Backend development with Python and Django framework."},
+        {"title": "Frontend Development", "description": "Responsive and interactive frontend development."},
+    ]
+    return render(request, 'services.html', {'services': services_list})
     
 
 # PORTFOLIO 

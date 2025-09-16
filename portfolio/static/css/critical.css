@@ -1,0 +1,35 @@
+/* Critical CSS - Above the fold content styles */
+.page-header { 
+  padding: 3rem 0; 
+}
+
+.service-hero img { 
+  max-width: 100%; 
+  height: auto; 
+}
+
+h1, h2, h3, .lead { 
+  margin: 1rem 0; 
+}
+
+.service-features { 
+  margin: 2rem 0; 
+}
+
+/* Add any other critical styles below */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Ensure content is visible while fonts load */
+html {
+  visibility: visible;
+  opacity: 1;
+}

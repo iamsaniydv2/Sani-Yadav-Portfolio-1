@@ -5,9 +5,27 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Sani Yadav - Portfolio Details</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <!-- Primary Meta Tags -->
+  <title>E-commerce Project | Sani Yadav - Full Stack Python Developer</title>
+  <meta name="description" content="E-commerce project developed by Sani Yadav. Built with Django, React, and modern web technologies. Features product catalog, cart functionality, and secure payment integration.">
+  <meta name="keywords" content="E-commerce, Django, React, Python Developer, Web Development, Online Store, Sani Yadav, Portfolio Project">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.saniyadav.dev/project/ecommerce" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.saniyadav.dev/project/ecommerce">
+  <meta property="og:title" content="E-commerce Project | Sani Yadav - Full Stack Python Developer">
+  <meta property="og:description" content="E-commerce project developed by Sani Yadav. Built with Django, React, and modern web technologies. Features product catalog, cart functionality, and secure payment integration.">
+  <meta property="og:image" content="https://www.saniyadav.dev/static/img/projects/ecommerce-preview.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.saniyadav.dev/project/ecommerce">
+  <meta property="twitter:title" content="E-commerce Project | Sani Yadav - Full Stack Python Developer">
+  <meta property="twitter:description" content="E-commerce project developed by Sani Yadav. Built with Django, React, and modern web technologies. Features product catalog, cart functionality, and secure payment integration.">
+  <meta property="twitter:image" content="https://www.saniyadav.dev/static/img/projects/ecommerce-preview.jpg">
 
   <!-- Favicons -->
   <link href="{% static 'img/favicon.png' %}" rel="icon">
@@ -34,7 +52,33 @@
   <link href="{% static 'css/main.css' %}" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body class="project-page" itemscope itemtype="https://schema.org/WebPage">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "E-commerce Website",
+    "description": "A fully functional e-commerce platform with product catalog, shopping cart, and secure payment processing.",
+    "programmingLanguage": ["Python", "JavaScript"],
+    "codeRepository": "https://github.com/saniyadav/ecommerce-project",
+    "applicationCategory": "E-commerce Platform",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.saniyadav.dev/project/ecommerce"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Sani Yadav",
+      "url": "https://www.saniyadav.dev"
+    },
+    "keywords": ["ecommerce", "django", "react", "python", "web development"],
+    "dateCreated": "2024-01-15",
+    "dateModified": "2024-08-20"
+  }
+  </script>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header dark-background d-flex flex-column">
@@ -96,14 +140,48 @@
   </header>
   <!-- End Header -->
 
-  <main class="main">
+  <main class="main" role="main">
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.saniyadav.dev/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Portfolio",
+        "item": "https://www.saniyadav.dev/#portfolio"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "E-commerce Project"
+      }]
+    }
+    </script>
 
-    <!-- Page Title -->
+    <!-- Project Header -->
     <div class="page-title dark-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Portfolio Projects</h1>
-        <nav class="breadcrumbs">
-          <ol>
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home' %}#portfolio">Portfolio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">E-commerce Project</li>
+          </ol>
+        </nav>
+        <h1 class="mb-3">E-commerce Project</h1>
+        <p class="lead">A complete online shopping solution with product catalog and secure checkout</p>
+        <div class="project-meta">
+          <span class="badge bg-primary me-2">Django</span>
+          <span class="badge bg-success me-2">React</span>
+          <span class="badge bg-info me-2">PostgreSQL</span>
+          <span class="badge bg-warning">Stripe</span>
+        </div>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li class="current">Projects Details</li>
           </ol>
@@ -134,32 +212,87 @@
               </script>
 
               <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide"><img src="{% static 'img/amz04.jpg' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'img/amz01.jpg' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'img/amz02.jpg' %}" alt=""></div>
-                <div class="swiper-slide"><img src="{% static 'img/amz03.jpg' %}" alt=""></div>
+                <div class="swiper-slide">
+                  <img src="{% static 'img/amz04.jpg' %}" 
+                       alt="AmazonPro E-commerce Homepage - Product showcase with navigation" 
+                       class="img-fluid">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'img/amz01.jpg' %}" 
+                       alt="AmazonPro Product Listing Page - Category view with filters" 
+                       class="img-fluid">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'img/amz02.jpg' %}" 
+                       alt="AmazonPro Product Details - Item description and purchase options" 
+                       class="img-fluid">
+                </div>
+                <div class="swiper-slide">
+                  <img src="{% static 'img/amz03.jpg' %}" 
+                       alt="AmazonPro Shopping Cart - Order summary and checkout process" 
+                       class="img-fluid">
+                </div>
               </div>
               <div class="swiper-pagination"></div>
             </div>
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200" itemscope itemtype="https://schema.org/WebApplication">
               <h3>Project Information</h3>
               <ul>
-                <li><strong>Category:</strong> Full-Stack Developer</li>
-                <li><strong>Available at:</strong> AmazonPro Website</li>
-                <li><strong>Project Date:</strong> 02 March, 2025</li>
-                <li><strong>Project URL:</strong> 
-                  <a href="https://amozonpro.netlify.app/" target="_blank">https://amozonpro.netlify.app/</a>
+                <li><strong>Category:</strong> <span itemprop="applicationCategory">E-commerce Platform</span></li>
+                <li><strong>Technologies:</strong> 
+                  <span itemprop="applicationSubCategory">Django, React, PostgreSQL, Stripe</span>
+                </li>
+                <li><strong>Project Date:</strong> 
+                  <time datetime="2025-03-02" itemprop="dateCreated">March 02, 2025</time>
+                </li>
+                <li><strong>Live Demo:</strong> 
+                  <a href="https://amozonpro.netlify.app/" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     itemprop="url">
+                    AmazonPro Live Demo
+                  </a>
+                </li>
+                <li><strong>GitHub:</strong> 
+                  <a href="https://github.com/saniyadav/amazonpro" 
+                     target="_blank" 
+                     rel="noopener noreferrer nofollow">
+                    View Source Code
+                  </a>
                 </li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>AmazonPro</h2>
-              <p>
-                AmazonPro is a full-stack Amazon clone with user authentication, cart management, and secure payments.
+              <h2 itemprop="name">AmazonPro E-commerce Platform</h2>
+              <p itemprop="description">
+                AmazonPro is a feature-rich e-commerce platform that replicates core functionalities of Amazon. 
+                Built with modern web technologies, it provides a seamless shopping experience with real-time 
+                inventory management and secure payment processing.
               </p>
+              
+              <h3 class="mt-4">Key Features</h3>
+              <ul class="feature-list" itemprop="featureList">
+                <li>User Authentication & Authorization</li>
+                <li>Product Catalog with Categories</li>
+                <li>Shopping Cart Management</li>
+                <li>Secure Checkout Process</li>
+                <li>Order History & Tracking</li>
+                <li>Responsive Design</li>
+              </ul>
+              
+              <div class="mt-4" itemprop="technology" content="Django, React, PostgreSQL">
+                <h4>Technical Stack</h4>
+                <div class="tech-stack">
+                  <span class="badge bg-primary me-2">Django REST Framework</span>
+                  <span class="badge bg-info me-2">React.js</span>
+                  <span class="badge bg-success me-2">PostgreSQL</span>
+                  <span class="badge bg-warning me-2">Stripe API</span>
+                  <span class="badge bg-secondary">AWS S3</span>
+                </div>
+              </div>
             </div>
           </div>
 

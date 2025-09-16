@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.saniyadav.dev/#person",
+  "name": "Sani Yadav",
+  "url": "https://www.saniyadav.dev",
+  "sameAs": [
+    "https://www.linkedin.com/in/sani-yadav-6b0b8b1b4/",
+    "https://github.com/saniyadavv"
+  ],
+  "jobTitle": "Python Full Stack Developer | Django & React Expert | Backend Specialist",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "description": "Experienced Python Full Stack Developer with expertise in Django, React, and REST APIs. Specializing in building scalable web applications, Python projects, and providing solutions for businesses. Available for hire as a Python Django Developer.",
+  "knowsAbout": [
+    "Python", 
+    "Django", 
+    "JavaScript", 
+    "React", 
+    "Node.js", 
+    "SQL", 
+    "Web Development",
+    "API Development",
+    "Database Design"
+  ],
+  "image": "https://www.saniyadav.dev/static/img/profile-photo.jpg",
+  "email": "your.email@example.com"
+}

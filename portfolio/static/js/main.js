@@ -1,53 +1,49 @@
-/**
-* Template Name: iPortfolio
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
   "use strict";
 
-  /**
-   * Header toggle
-   */
+  // Header toggle functionality
   const headerToggleBtn = document.querySelector('.header-toggle');
-
-  function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
-    headerToggleBtn.classList.toggle('bi-list');
-    headerToggleBtn.classList.toggle('bi-x');
-  }
-  headerToggleBtn.addEventListener('click', headerToggle);
-
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.header-show')) {
-        headerToggle();
+  
+  if (headerToggleBtn) {
+    function headerToggle() {
+      const header = document.querySelector('#header');
+      if (header) {
+        header.classList.toggle('header-show');
+        headerToggleBtn.classList.toggle('bi-list');
+        headerToggleBtn.classList.toggle('bi-x');
       }
+    }
+    
+    headerToggleBtn.addEventListener('click', headerToggle);
+
+    // Close mobile menu when clicking on nav links
+    document.querySelectorAll('#navmenu a').forEach(navLink => {
+      navLink.addEventListener('click', () => {
+        if (document.querySelector('.header-show')) {
+          headerToggle();
+        }
+      });
     });
+  }
 
-  });
-
-  /**
-   * Toggle mobile nav dropdowns
-   */
-  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+  // Mobile nav dropdowns
+  document.querySelectorAll('.navmenu .toggle-dropdown').forEach(dropdown => {
+    dropdown.addEventListener('click', function(e) {
       e.preventDefault();
-      this.parentNode.classList.toggle('active');
-      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+      const parent = this.parentNode;
+      if (parent) {
+        parent.classList.toggle('active');
+        if (parent.nextElementSibling) {
+          parent.nextElementSibling.classList.toggle('dropdown-active');
+        }
+      }
       e.stopImmediatePropagation();
     });
   });
 
-  /**
-   * Preloader
-   */
+  // Remove preloader when page loads
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
@@ -55,31 +51,31 @@
     });
   }
 
-  /**
-   * Scroll top button
-   */
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+  // Scroll to top button
+  const scrollTop = document.querySelector('.scroll-top');
+  if (scrollTop) {
+    function toggleScrollTop() {
+      if (window.scrollY > 100) {
+        scrollTop.classList.add('active');
+      } else {
+        scrollTop.classList.remove('active');
+      }
     }
-  }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+    
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
 
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+    window.addEventListener('scroll', toggleScrollTop);
+    toggleScrollTop(); // Check on load
+  }
 
-  /**
-   * Animation on scroll function and init
-   */
-  function aosInit() {
+  // Initialize AOS (Animate On Scroll)
+  if (typeof AOS !== 'undefined') {
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -87,143 +83,194 @@
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
 
-  /**
-   * Init typed.js
-   */
-  const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
-  });
-
-  /**
-   * Initiate glightbox
-   */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
-  /**
-   * Init isotope layout and filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
+  // Initialize Typed.js if available
+  if (typeof Typed !== 'undefined') {
+    const typedElement = document.querySelector('.typed');
+    if (typedElement) {
+      const typedStrings = typedElement.getAttribute('data-typed-items');
+      if (typedStrings) {
+        try {
+          new Typed('.typed', {
+            strings: typedStrings.split(','),
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 2000
+          });
+        } catch (e) {
+          console.error('Error initializing Typed.js:', e);
         }
-      }, false);
+      }
+    }
+  }
+
+  // Initialize Pure Counter
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
+
+  // Initialize Waypoint for skills animation
+  if (typeof Waypoint !== 'undefined') {
+    const skillsSections = document.querySelectorAll('.skills-animation');
+    if (skillsSections.length > 0) {
+      skillsSections.forEach(section => {
+        new Waypoint({
+          element: section,
+          offset: '80%',
+          handler: function() {
+            const progressBars = section.querySelectorAll('.progress .progress-bar');
+            progressBars.forEach(bar => {
+              if (bar.getAttribute('aria-valuenow')) {
+                bar.style.width = bar.getAttribute('aria-valuenow') + '%';
+              }
+            });
+          }
+        });
+      });
+    }
+  }
+
+  // Initialize GLightbox
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({
+      selector: '.glightbox'
     });
+  }
 
-  });
+  // Initialize Isotope for portfolio filtering
+  if (typeof Isotope !== 'undefined' && typeof imagesLoaded !== 'undefined') {
+    document.querySelectorAll('.isotope-layout').forEach(container => {
+      const layout = container.getAttribute('data-layout') || 'masonry';
+      const filter = container.getAttribute('data-default-filter') || '*';
+      const sort = container.getAttribute('data-sort') || 'original-order';
+      const isotopeContainer = container.querySelector('.isotope-container');
 
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+      if (isotopeContainer) {
+        imagesLoaded(isotopeContainer, function() {
+          const iso = new Isotope(isotopeContainer, {
+            itemSelector: '.isotope-item',
+            layoutMode: layout,
+            filter: filter,
+            sortBy: sort
+          });
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
+          // Filter items on button click
+          const filterButtons = container.querySelectorAll('.isotope-filters li');
+          if (filterButtons.length > 0) {
+            filterButtons.forEach(button => {
+              button.addEventListener('click', function() {
+                const activeButton = container.querySelector('.isotope-filters .filter-active');
+                if (activeButton) {
+                  activeButton.classList.remove('filter-active');
+                }
+                this.classList.add('filter-active');
+                
+                const filterValue = this.getAttribute('data-filter') || '*';
+                iso.arrange({ filter: filterValue });
+                
+                // Refresh AOS after filtering
+                if (typeof AOS !== 'undefined') {
+                  AOS.refresh();
+                }
+              });
+            });
+          }
+        });
       }
     });
   }
 
-  window.addEventListener("load", initSwiper);
+  // Initialize Swiper sliders
+  if (typeof Swiper !== 'undefined') {
+    function initSwipers() {
+      document.querySelectorAll('.init-swiper').forEach(swiperEl => {
+        const configEl = swiperEl.querySelector('.swiper-config');
+        if (configEl) {
+          try {
+            const config = JSON.parse(configEl.textContent.trim());
+            if (swiperEl.classList.contains('swiper-tab')) {
+              if (typeof initSwiperWithCustomPagination === 'function') {
+                initSwiperWithCustomPagination(swiperEl, config);
+              } else {
+                new Swiper(swiperEl, config);
+              }
+            } else {
+              new Swiper(swiperEl, config);
+            }
+          } catch (e) {
+            console.error('Error initializing Swiper:', e);
+          }
+        }
+      });
+    }
 
-  /**
-   * Correct scrolling position upon page load for URLs containing hash links.
-   */
-  window.addEventListener('load', function(e) {
+    // Initialize after DOM is fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSwipers);
+    } else {
+      initSwipers();
+    }
+  }
+
+  // Handle hash-based navigation
+  function handleHashNavigation() {
     if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
         setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          const scrollMargin = parseInt(getComputedStyle(target).scrollMarginTop) || 0;
           window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
+            top: target.offsetTop - scrollMargin,
             behavior: 'smooth'
           });
         }, 100);
       }
     }
-  });
-
-  /**
-   * Navmenu Scrollspy
-   */
-  let navmenulinks = document.querySelectorAll('.navmenu a');
-
-  function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
-      let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
-      }
-    })
   }
-  window.addEventListener('load', navmenuScrollspy);
-  document.addEventListener('scroll', navmenuScrollspy);
+
+  // Handle initial page load with hash
+  window.addEventListener('load', handleHashNavigation);
+  
+  // Handle browser back/forward navigation
+  window.addEventListener('popstate', handleHashNavigation);
+
+  // Navigation menu scrollspy
+  function setupScrollspy() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    if (navLinks.length === 0 || sections.length === 0) return;
+    
+    function updateActiveNav() {
+      let currentSection = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav(); // Run once on load
+  }
+  
+  // Initialize scrollspy after page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupScrollspy);
+  } else {
+    setupScrollspy();
+  }
 
 })();

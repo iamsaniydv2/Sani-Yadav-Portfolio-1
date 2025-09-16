@@ -4,14 +4,50 @@
 <html lang="en">
 
 <head>
-  <!-- Meta Information -->
+  <!-- Primary Meta Tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sani Yadav | Full Stack Developer & Python/Django Expert</title>
-  <meta name="description" content="Sani Yadav - Full Stack Developer & Python/Django Expert. Specializing in web development, responsive design, and building scalable applications. Check out my portfolio and projects.">
-  <meta name="keywords" content="Full Stack Developer, Python Developer, Django Developer, Web Developer, Portfolio, Sani Yadav, Web Development, Responsive Design">
+  <!-- Primary Meta Tags -->
+  <title>Sani Yadav |Python Django Developer | Full Stack Developer Portfolio</title>
+  <meta name="title" content="Hire Python Django Developer | Sani Yadav | Full Stack Portfolio">
+  <meta name="description" content="Python Full Stack Developer specializing in Django, React, and REST APIs. View my portfolio of web applications, Python projects, and technical expertise for your next development project.">
+  <meta name="keywords" content="Hire Python Django Developer, Python Full Stack Developer Portfolio, Django React Developer for Hire, Python Web Developer Resume Examples, Full Stack Python Developer Projects, Python Django Developer Portfolio, Senior Python Developer CV, Python Backend Developer Portfolio, Python Web Development Expert, Python Full Stack Engineer Resume, Django REST API Specialist, Sani Yadav, Web Development, Django REST Framework, React.js, PostgreSQL, MongoDB, API Development, Python Projects for Job, Best Python Developer Portfolio">
+  <meta name="author" content="Sani Yadav">
+  <link rel="canonical" href="https://www.saniyadav.dev/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saniyadav.dev/">
+  <meta property="og:title" content="Hire Python Django Developer | Sani Yadav | Full Stack Portfolio">
+  <meta property="og:description" content="Professional Python Full Stack Developer with expertise in Django, React, and modern web technologies. View my portfolio and projects for your next development needs.">
+  <meta property="og:image" content="https://saniyadav.dev/static/img/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://saniyadav.dev/">
+  <meta property="twitter:title" content="Hire Python Django Developer | Sani Yadav | Full Stack Portfolio">
+  <meta property="twitter:description" content="Python Full Stack Developer with expertise in Django, React, and modern web technologies. View my portfolio and projects for your next development needs.">
+  <meta property="twitter:image" content="https://saniyadav.dev/static/img/og-image.jpg">
+  
+  <!-- JSON-LD Structured Data: Enhances search results with rich snippets and knowledge panels for Sani Yadav's professional profile -->
+  <script type="application/ld+json" src="{% static 'json/structured-data.json' %}"></script>
+  
+  <meta name="keywords" content="Full Stack Developer, Python Developer, Django Developer, Web Developer, Portfolio, Sani Yadav, Web Development, Responsive Design, Backend Development, Frontend Development">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://sani-yadav-portfolio-9.onrender.com/" />
+  
   <!-- Google Search Console Verification -->
   <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+  
+  <!-- Language Attributes -->
+  <meta http-equiv="content-language" content="en">
+  <meta name="language" content="English">
+  
+  <!-- Author and Copyright -->
+  <meta name="author" content="Sani Yadav">
+  <meta name="copyright" content="Sani Yadav">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -49,32 +85,9 @@
   <link rel="stylesheet" href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" media="print" onload="this.media='all'">
 
   <!-- Main CSS File (Critical) -->
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="{% static 'css/main.css' %}"></noscript>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sani Yadav",
-    "url": "https://sani-yadav-portfolio-9.onrender.com",
-    "sameAs": [
-      "https://github.com/saniyadavv",
-      "https://www.linkedin.com/in/sani-yadav-6b0b8b1b4/"
-    ],
-    "jobTitle": "Full Stack Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Freelance"
-    },
-    "description": "Full Stack Developer specializing in Python, Django, and modern web technologies.",
-    "image": "{% static 'img/sani2.0.jpg' %}",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "India"
-    }
-  }
-  </script>
 </head>
 
 <body class="index-page">
@@ -85,12 +98,19 @@
 
     <!-- Profile Image -->
     <div class="profile-img">
-      <img src="{% static 'img/sani2.0.jpg' %}" alt="Sani Yadav - Full Stack Developer" class="img-fluid rounded-circle">
+      <img 
+    src="{% static 'img/sani2.0.jpg' %}" 
+    alt="Sani Yadav - Professional Full Stack Developer" 
+    class="img-fluid rounded-circle"
+    width="200" 
+    height="200"
+    loading="lazy"
+  >
     </div>
 
     <!-- Logo -->
     <a href="{% url 'home' %}" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Sani Yadav</h1>
+      <h1 class="sitename" aria-label="Sani Yadav - Professional Portfolio">Sani Yadav</h1>
     </a>
 
     <!-- Social Links -->
@@ -140,10 +160,12 @@
   <main class="main">
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-      <img src="{% static 'img/img1.jpg' %}" alt="" data-aos="fade-in" class="">
+      <img src="{% static 'img/img1.jpg' %}" alt="Sani Yadav - Python Full Stack Developer & Django Expert" data-aos="fade-in" class="hero-banner" loading="lazy" width="1920" height="1080">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Sani Yadav</h2>
-        <p>I'm <span class="typed" data-typed-items="Full Stack Python Developer, Freelancer, Web Designer"></span><span class="typed-cursor" aria-hidden="true"></span></p>
+        <h1 class="visually-hidden">Python Django Developer | Sani Yadav</h1>
+        <h2>I'm <span>Sani Yadav</span></h2>
+        <p class="lead"><span class="typed" data-typed-items="Full Stack Python Developer, Backend Developer, "></span></p>
+        <p><span class="typed-cursor" aria-hidden="true"></span></p>
       </div>
     </section>
 
@@ -244,8 +266,8 @@
     <section id="skills" class="skills section light-background">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>HTML, CSS, Bootstrap, JavaScript, jQuery, Python, Django, MySQL, Git, GitHub, VS Code
+        <h2>My Technical Skills</h2>
+        <p class="lead">Expert Python Full Stack Developer with expertise in Django, React, and modern web technologies</p>
         </p>
       </div><!-- End Section Title -->
 
@@ -307,11 +329,12 @@
     </section><!-- /Skills Section -->
 
     <!-- New Skills Section -->
-    <section id="skills" class="skills section light-background">
+    <section id="additional-skills" class="skills section light-background">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Git/GitHub, Linux Commands, Debugging, MongoDB, Bootstrap, Media Queries.</p>
+        <h2>Additional Skills & Tools</h2>
+        <p class="lead">Proficient in version control, databases, and development tools for efficient web application development</p>
+        <p>Git/GitHub, Linux/Unix, Debugging, MongoDB, Bootstrap, Responsive Design, Media Queries, RESTful APIs, Docker, AWS, CI/CD</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -375,7 +398,7 @@
     <section id="resume" class="resume section">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
+        <h2>Professional Experience & Education</h2>
         <button class="btn btn-primary" id="resumeButton" data-pdf="{% static 'img/resume.jpg.pdf' %}">
           <i class="fa-solid fa-file-pdf"></i>
         </button>
@@ -514,8 +537,8 @@
     <section id="portfolio" class="portfolio section light-background">
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Welcome! I am a Full-Stack Developer with expertise in HTML, CSS, Bootstrap, JavaScript, jQuery, Python
+        <h2>My Python & Django Projects</h2>
+        <p class="lead">Explore my portfolio of web applications built with Python, Django, React, and modern web technologies</p>
           (Django), MySQL, Git, GitHub, and Netlify. With 30+ projects completed, including e-commerce platforms and
           portfolio websites, I specialize in building dynamic, responsive, and user-centric web applications.
           Passionate about problem-solving and innovation, I continuously refine my skills to deliver efficient digital
@@ -525,8 +548,8 @@
       <section id="portfolio" class="portfolio">
         <div class="container">
           <div class="section-title">
-            <h2>Explore My Work</h2>
-            <p></p>
+            <h3 class="h4">Featured Web Development Projects</h3>
+            <p>Handpicked selection of my best Python and full-stack development work</p>
           </div><!-- End Section Title -->
 
           <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
@@ -543,10 +566,16 @@
               <!-- Portfolio Item 1 -->
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
                 <div class="portfolio-content h-100">
-                  <img src="{% static 'img/01new.jpg' %}" class="img-fluid" alt="">
+                  <img src="{% static 'img/01new.jpg' %}" class="img-fluid" alt="Shree Krishna Restaurant - Food Ordering and Table Booking Web App" width="400" height="300" loading="lazy">
                   <div class="portfolio-info">
-                    <h4>project 1</h4>
-                    <p>Shree Krishna Reshto – Delicious Food & Party Table Booking Available!</p>
+                    <h3>Shree Krishna Restaurant</h3>
+                    <p>Full-stack restaurant management system with online food ordering and table booking functionality. Built with Django, React, and PostgreSQL.</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-1">Django</span>
+                      <span class="badge bg-secondary me-1">React</span>
+                      <span class="badge bg-info text-dark me-1">PostgreSQL</span>
+                      <span class="badge bg-success me-1">REST API</span>
+                    </div>
                     <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app"
                       class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                     <a href="{% url 'portfolio_details' %}" title="More Details" class="details-link"><i
@@ -559,10 +588,16 @@
               <!-- Portfolio Item 2 -->
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                 <div class="portfolio-content h-100">
-                  <img src="{% static 'img/image.png' %}" class="img-fluid" alt="">
+                  <img src="{% static 'img/image.png' %}" class="img-fluid" alt="Amazon Clone - E-commerce Platform with Secure Payments" width="400" height="300" loading="lazy">
                   <div class="portfolio-info">
-                    <h4>project 2</h4>
-                    <p>Amazon Clone – Online Shopping with Easy Checkout & Secure Payments.</p>
+                    <h3>Amazon Clone</h3>
+                    <p>Full-featured e-commerce platform with user authentication, product catalog, shopping cart, and secure payment processing. Built with Django, React, and Stripe integration.</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-1">Django</span>
+                      <span class="badge bg-secondary me-1">React</span>
+                      <span class="badge bg-warning text-dark me-1">Stripe</span>
+                      <span class="badge bg-success me-1">REST API</span>
+                    </div>
                     <a href="assets/img/portfolio/product-1.jpg" title="Product 1"
                       data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
                         class="bi bi-zoom-in"></i></a>
@@ -576,10 +611,16 @@
               <!-- Portfolio Item 3 -->
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                 <div class="portfolio-content h-100">
-                  <img src="{% static 'img/03new.jpg' %}" class="img-fluid" alt="portfolio personal project 3">
+                  <img src="{% static 'img/03new.jpg' %}" class="img-fluid" alt="Legal Connect - Lawyer Search and Appointment Booking Platform" width="400" height="300" loading="lazy">
                   <div class="portfolio-info">
-                    <h4>Project 3</h4>
-                    <p>Find & Hire Best Lawyers Easily – Advocate Selection Made Simple! ⚖️</p>
+                    <h3>Legal Connect</h3>
+                    <p>Comprehensive platform connecting clients with legal professionals. Features include lawyer search by specialization, appointment scheduling, and document management system.</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-1">Django</span>
+                      <span class="badge bg-info text-dark me-1">PostgreSQL</span>
+                      <span class="badge bg-success me-1">Django REST</span>
+                      <span class="badge bg-secondary me-1">Bootstrap</span>
+                    </div>
                     <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1"
                       data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
                       <i class="bi bi-zoom-in"></i>
@@ -595,10 +636,16 @@
               <!-- Portfolio Item 4 (Books) -->
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
                 <div class="portfolio-content h-100">
-                  <img src="{% static 'img/04new.jpg' %}" class="img-fluid" alt="Hostel Finder Project">
+                  <img src="{% static 'img/04new.jpg' %}" class="img-fluid" alt="Hostel Finder - UG/PG Accommodation Search Platform" width="400" height="300" loading="lazy">
                   <div class="portfolio-info">
-                    <h4>Project 4</h4>
-                    <p>Find the Best UG/PG Hostels for Boys & Girls Easily! <span>🏠</span></p>
+                    <h3>Hostel Finder</h3>
+                    <p>Comprehensive platform for students to find and book hostels with features like location-based search, reviews, and online booking. Includes admin dashboard for hostel management.</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-1">Django</span>
+                      <span class="badge bg-info text-dark me-1">PostgreSQL</span>
+                      <span class="badge bg-warning text-dark me-1">Google Maps API</span>
+                      <span class="badge bg-secondary me-1">Bootstrap</span>
+                    </div>
                     <a href="assets/img/portfolio/books-1.jpg" title="Books 1" data-gallery="portfolio-gallery-books"
                       class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                     <a href="{% url 'project04' %}" title="More Details" class="details-link">
@@ -612,10 +659,16 @@
               <!-- Portfolio Item 5 -->
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
                 <div class="portfolio-content h-100">
-                  <img src="{% static 'img/balaji01.jpg' %}" class="img-fluid" alt="Balaji Fortune - Luxury Homes">
+                  <img src="{% static 'img/balaji01.jpg' %}" class="img-fluid" alt="Balaji Fortune - Premium Real Estate Website" width="400" height="300" loading="lazy">
                   <div class="portfolio-info">
-                    <h4>Project 5</h4>
-                    <p>Balaji Fortune – Premium Living with Luxury & Comfort Homes!</p>
+                    <h3>Balaji Fortune</h3>
+                    <p>Real estate website showcasing luxury properties with virtual tours, mortgage calculator, and property comparison tools. Integrated with CRM for lead management.</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-1">Django</span>
+                      <span class="badge bg-secondary me-1">React</span>
+                      <span class="badge bg-info text-dark me-1">PostgreSQL</span>
+                      <span class="badge bg-success me-1">Django REST</span>
+                    </div>
                     <a href="{% static 'img/hotel.jpg' %}" title="Product 2" data-gallery="portfolio-gallery-product"
                       class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                     <a href="{% url 'project06' %}" title="More Details" class="details-link">
@@ -631,10 +684,16 @@
               <!-- Portfolio Item 6 (Personal Projects) -->
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
                 <div class="portfolio-content h-100">
-                  <img src="{% static 'img/new5.jpg' %}" class="img-fluid" alt="hotelmanagement">
+                  <img src="{% static 'img/new5.jpg' %}" class="img-fluid" alt="Nertera CCTV - Smart Security Solutions Platform" width="400" height="300" loading="lazy">
                   <div class="portfolio-info">
-                    <h4>project 6</h4>
-                    <p>Nertera CCTV – Smart Security Solutions for Homes & Businesses!" 📷🔒</p>
+                    <h3>Nertera CCTV</h3>
+                    <p>IoT-based security solution with real-time monitoring, motion detection alerts, and cloud storage integration. Includes mobile app for remote access to security feeds.</p>
+                    <div class="tech-stack">
+                      <span class="badge bg-primary me-1">Django</span>
+                      <span class="badge bg-secondary me-1">React Native</span>
+                      <span class="badge bg-warning text-dark me-1">WebRTC</span>
+                      <span class="badge bg-success me-1">AWS S3</span>
+                    </div>
                     <a href="assets/img/portfolio/personal-1.jpg" title="Personal Project 1"
                       data-gallery="portfolio-gallery-personal" class="glightbox preview-link"><i
                         class="bi bi-zoom-in"></i></a>
@@ -730,37 +789,12 @@
       <section id="testimonials" class="testimonials section light-background">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Testimonials</h2>
-          <p>Sani Yadav is highly praised for delivering innovative solutions and exceptional development expertise.</p>
+          <h2>Client Testimonials</h2>
+          <p class="lead">What my clients and colleagues say about working with me</p>
         </div><!-- End Section Title -->
-
+         <!-- testimonial section ke salid ko control karti hai ye js ke through  -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper init-swiper">
-            <script type="application/json" class="swiper-config">
-              {
-                "loop": true,
-                "speed": 600,
-                "autoplay": {
-                  "delay": 5000
-                },
-                "slidesPerView": "auto",
-                "pagination": {
-                  "el": ".swiper-pagination",
-                  "type": "bullets",
-                  "clickable": true
-                },
-                "breakpoints": {
-                  "320": {
-                    "slidesPerView": 1,
-                    "spaceBetween": 40
-                  },
-                  "1200": {
-                    "slidesPerView": 3,
-                    "spaceBetween": 1
-                  }
-                }
-              }
-            </script>
 
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -772,7 +806,7 @@
                       growth.</span>
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
-                  <img src="{% static 'img/my-profile-img.jpg' %}" class="testimonial-img" alt="Sani Yadav">
+                  <img src="{% static 'img/sani2.0.jpg' %}" class="testimonial-img" alt="Sani Yadav">
                   <h3>Sani Yadav</h3>
                   <h4>Ceo &amp; Founder</h4>
                 </div>
@@ -787,7 +821,7 @@
                       decision-making to meet objectives.</span>
                     <i class="bi bi-quote quote-icon-right"></i>
                   </p>
-                  <img src="{% static 'img/my-profile-img.jpg' %}" class="testimonial-img" alt="Vikas Pal">
+                  <img src="{% static 'img/vk.jpg' %}" class="testimonial-img" alt="Vikas Pal">
                   <h3>Er.Vikas Pal</h3>
                   <h4> President & Designer</h4>
                 </div>
@@ -849,9 +883,8 @@
       <section id="contact" class="contact section">
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>"Feel free to reach out for any project inquiries, collaboration opportunities, or just to connect. I'll
-            get back to you as soon as possible!"</p>
+          <h1>Get In Touch</h1>
+          <p class="lead">Have a project in mind or want to discuss an opportunity? Let's connect!</p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -878,64 +911,77 @@
                   <i class="bi bi-envelope flex-shrink-0"></i>
                   <div>
                     <h3>Email Us</h3>
-                    <p>info@example.com</p>
+                    <p>saniyadav7755@gmail.com</p>
                   </div>
                 </div><!-- End Info Item -->
 
-                <div class="map-container" data-aos="fade-up">
-                  <div class="map-loading">
-                    <div class="spinner-border text-primary" role="status">
-                      <span class="visually-hidden">Loading...</span>
+                <div class="map-container mt-4" style="height: 350px; width: 100%; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.12); border: 1px solid rgba(0,0,0,0.1);" data-aos="fade-up">
+                  <div class="map-loading" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f8f9fa; z-index: 1; transition: all 0.3s ease;">
+                    <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+                      <span class="visually-hidden">Loading Map...</span>
                     </div>
+                    <p class="text-muted mb-0">Loading location...</p>
                   </div>
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.845377888799!2d80.94615967510754!3d26.84669307671807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2ae2c693c3f%3A0x57b7e64860d7b8f7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1715670162493!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14224.22674722224!2d80.94615967510754!3d26.84669307671807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2ae2c693c3f%3A0x57b7e64860d7b8f7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1715670162493!5m2!1sen!2sin"
                     class="google-map"
+                    style="border: 0; width: 100%; height: 100%; position: absolute; top: 0; left: 0; filter: grayscale(20%) contrast(105%) saturate(110%); transition: filter 0.3s ease;"
                     allowfullscreen="" 
                     loading="lazy"
+                    title="Sani Yadav - Location in Lucknow, Uttar Pradesh"
+                    aria-label="Interactive map showing Sani Yadav's location in Lucknow, Uttar Pradesh"
                     referrerpolicy="no-referrer-when-downgrade"
-                    onload="this.parentNode.querySelector('.map-loading').style.display='none';">
+                    onload="this.parentNode.querySelector('.map-loading').style.opacity='0'; setTimeout(() => { this.parentNode.querySelector('.map-loading').style.display='none'; }, 300);">
                   </iframe>
+                  <div class="map-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);"></div>
                 </div>
+                <style>
+                  .map-container:hover .google-map {
+                    filter: grayscale(0%) contrast(100%) saturate(100%) !important;
+                  }
+                  .map-container {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  }
+                  .map-container:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
+                  }
+                </style>
               </div>
             </div>
         <!--start contect form-->
           
 <!--Contact Form Start -->
 <div class="col-lg-7">
-  <form id="contact-form" class="php-email-form" action="{% url 'contact' %}" method="post" data-aos="fade-up" data-aos-delay="200">
+  <form id="contact-form" class="php-email-form" action="{% url 'contact' %}" method="post" data-aos="fade-up" data-aos-delay="200" onsubmit="return submitContactForm(this);">
     {% csrf_token %}
     <div class="row gy-4">
       <div class="col-md-6">
         <label for="name-field" class="pb-2">Your Name</label>
-        <input type="text" name="user_name" id="name-field" class="form-control" required="">
+        <input type="text" name="user_name" id="name-field" class="form-control" required>
       </div>
 
       <div class="col-md-6">
         <label for="email-field" class="pb-2">Your Email</label>
-        <input type="email" class="form-control" name="user_email" id="email-field" required="">
+        <input type="email" class="form-control" name="user_email" id="email-field" required>
       </div>
-      
-      
-
 
       <div class="col-md-12">
-  <label for="phone-field" class="pb-2">Phone Number</label>
-  <input type="text" class="form-control" name="phone" id="phone-field" required="">
-</div>
-
+        <label for="phone-field" class="pb-2">Phone Number</label>
+        <input type="text" class="form-control" name="phone" id="phone-field" required>
+      </div>
 
       <div class="col-md-12">
         <label for="message-field" class="pb-2">Message</label>
-        <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+        <textarea class="form-control" name="message" rows="6" id="message-field" required></textarea>
       </div>
 
       <div class="col-md-12 text-center">
-        <div class="loading">Loading</div>
-        <div class="error-message"></div>
-        <div class="sent-message">Your message has been sent. Thank you!</div>
+        <div class="loading" style="display: none;">Sending message...</div>
+        <div class="error-message" style="display: none; color: #dc3545;"></div>
+        <div class="sent-message" style="display: none; color: #28a745;">Your message has been sent. Thank you!</div>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn btn-primary">Send Message</button>
       </div>
     </div>
   </form>
@@ -988,80 +1034,31 @@
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files with Defer -->
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}" defer></script>
-  <script src="{% static 'vendor/aos/aos.js' %}" defer></script>
-  <script src="{% static 'vendor/typed.js/typed.umd.js' %}" defer></script>
-  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}" defer></script>
-  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}" defer></script>
-  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}" defer></script>
-  <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}" defer></script>
-  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}" defer></script>
-  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}" defer></script>
-  <script src="{% static 'vendor/email-form/validate_new.js' %}" defer></script>
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'vendor/email-form/validate_new.js' %}"></script>
 
-  <!-- Dark Mode Toggle Button -->
-  <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
-    <i class="bi bi-moon-fill"></i>
-  </button>
-
-  <!-- Main JS File -->
+  <!-- Typed.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  
+  <!-- Template Main JS File -->
   <script src="{% static 'js/main.js' %}"></script>
-
-  <!-- Typed.js Initialization -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize Typed.js
-      if (document.querySelector('.typed')) {
-        var typed = new Typed('.typed', {
-          strings: ['Full Stack Python Developer', 'Freelancer', 'Web Designer'],
-          typeSpeed: 100,
-          backSpeed: 50,
-          backDelay: 3000,  // 3 seconds delay before backspacing
-          loop: true
-        });
-      }
-      
-      // Dark Mode Script
-      const toggle = document.getElementById('darkModeToggle');
-      const icon = toggle.querySelector('i');
-      
-      // Check for saved theme preference
-      const currentTheme = localStorage.getItem('theme') || 'light';
-      
-      // Apply saved theme
-      if (currentTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-      }
-      
-      // Toggle function
-      toggle.onclick = function() {
-        if (document.body.classList.contains('dark-mode')) {
-          // Switch to light
-          document.body.classList.remove('dark-mode');
-          icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-          localStorage.setItem('theme', 'light');
-        } else {
-          // Switch to dark
-          document.body.classList.add('dark-mode');
-          icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-          localStorage.setItem('theme', 'dark');
-        }
-      };
-
-      // Handle resume button click
-      const resumeButton = document.getElementById('resumeButton');
-      if (resumeButton) {
-        resumeButton.addEventListener('click', function() {
-          const pdfUrl = this.getAttribute('data-pdf');
-          if (pdfUrl) {
-            window.open(pdfUrl, '_blank');
-          }
-        });
-      }
-    });
-  </script>
+  
+  <!-- Custom JavaScript Files -->
+  <script src="{% static 'js/alerts.js' %}"></script>
+  <script src="{% static 'js/typed-init.js' %}"></script>
+  <script src="{% static 'js/dark-mode.js' %}"></script>
+  <script src="{% static 'js/resume-button.js' %}"></script>
+  
+  <!-- Initialize Swiper -->
+  <script src="{% static 'js/swiper-config.js' %}"></script>
 </body>
 
 </html>

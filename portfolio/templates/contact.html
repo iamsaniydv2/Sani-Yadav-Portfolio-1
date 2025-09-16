@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<!-- Primary Meta Tags -->
+<title>Contact Sani Yadav | Python Full Stack Developer | saniyadav.dev</title>
+<meta name="title" content="Contact Sani Yadav | Python Full Stack Developer">
+<meta name="description" content="Get in touch with Sani Yadav, a skilled Python Full Stack Developer. Available for freelance projects, job opportunities, and technical discussions. Quick response guaranteed.">
+<meta name="keywords" content="Python Developer, Django Developer, Contact, Hire Developer, Freelance Developer, Web Development, Python Jobs, India, Django Developer, Full Stack Engineer, Web Developer India, Python Programmer">
+<meta name="author" content="Sani Yadav">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://saniyadav.dev/contact/">
+<meta property="og:title" content="Contact Sani Yadav | Python Full Stack Developer">
+<meta property="og:description" content="Get in touch with Sani Yadav, a skilled Python Full Stack Developer. Available for freelance projects, job opportunities, and technical discussions.">
+<meta property="og:image" content="https://saniyadav.dev/static/img/og-contact.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://saniyadav.dev/contact/">
+<meta property="twitter:title" content="Contact Sani Yadav | Python Full Stack Developer">
+<meta property="twitter:description" content="Get in touch with Sani Yadav, a skilled Python Full Stack Developer. Available for freelance projects, job opportunities, and technical discussions.">
+<meta property="twitter:image" content="https://saniyadav.dev/static/img/og-contact.jpg">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://saniyadav.dev/contact/" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Sani Yadav - Python Full Stack Developer",
+  "description": "Professional contact page for Sani Yadav, Python Full Stack Developer. Get in touch for web development projects, job opportunities, and technical discussions.",
+  "url": "https://saniyadav.dev/contact/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://saniyadav.dev/contact/"
+  },
+  "image": "https://saniyadav.dev/static/img/og-contact.jpg",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "telephone": "+91-XXXXXXXXXX",
+    "email": "contact@saniyadav.dev",
+    "areaServed": "IN",
+    "availableLanguage": ["en", "hi"]
+  }],
+  "publisher": {
+    "@type": "Person",
+    "name": "Sani Yadav",
+    "jobTitle": "Python Full Stack Developer",
+    "url": "https://saniyadav.dev"
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section id="contact" class="contact section">
+  <div class="container" data-aos="fade-up">
+    <h1>Get In Touch</h1>
+    <p class="lead">Have a project in mind or want to discuss an opportunity? I'd love to hear from you!</p>
+
+    <div class="row">
+      <!-- Contact Form Column -->
+      <div class="col-lg-7">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+        
+        <form action="{% url 'contact' %}" method="post" class="php-email-form">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="user_name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="user_email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" name="phone" placeholder="Your Phone Number">
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Google Maps Column -->
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <div class="map-container rounded-3 overflow-hidden shadow" style="height: 100%; min-height: 400px;" aria-label="Interactive map showing location in Lucknow, India">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14224.22674722224!2d80.9411239!3d26.8465175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1694080000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Sani Yadav's Location in Lucknow, Uttar Pradesh">
+          </iframe>
+          <style>
+            .map-container iframe {
+              filter: grayscale(10%) contrast(105%) saturate(105%);
+              transition: all 0.3s ease;
+            }
+          </style>
+        </div>
+        <div class="contact-info mt-4">
+          <h4><i class="bi bi-geo-alt-fill me-2"></i>Location</h4>
+          <p>Lucknow, Uttar Pradesh, India</p>
+          
+          <h4 class="mt-4"><i class="bi bi-envelope-fill me-2"></i>Email</h4>
+          <p>contact@saniyadav.dev</p>
+          
+          <h4 class="mt-4"><i class="bi bi-phone-fill me-2"></i>Call</h4>
+          <p>+91 XXXXX</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
