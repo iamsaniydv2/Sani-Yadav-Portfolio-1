@@ -15,7 +15,4 @@ services:
         value: --workers=4 --worker-class=gevent --worker-connections=1000
     autoDeploy: true
     plan: free
-    disk:
-      name: media
-      mountPath: /opt/render/project/src/media
-      sizeGB: 1
+   
